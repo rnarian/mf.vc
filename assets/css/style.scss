@@ -15,6 +15,7 @@
  */
 
 $constrainObject: true;
+$buttonObject: true;
 
 /* colors */
 
@@ -49,5 +50,5 @@ $basePageBreak: $breakLaptop min-height 600px;
 @import 'center';
 @import 'post-it';
 @import 'modal';
-@import 'wave';
+@import 'button';
 @import 'form';

@@ -1,0 +1,33 @@
+.button--wave,
+.button--wave-light {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  background: transparent;
+  border: none;
+  padding-left: 0 !important; // to trump button objects padding
+  padding-right: 0 !important; // to trump button objects padding
+  color: $colorDarkText;
+  transition: color .2s;
+  &:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    bottom: -$baseUnit/3;
+    height: 14px; // height of wave.svg
+    background-repeat: repeat-x !important; // to trump grunticons background-repeat
+    background-position: center center;
+  }
+  &:hover {
+    text-decoration: none;
+    color: $colorMain;
+  }
+}
+
+.button--wave-light {
+  color: #fff;
+  &:hover {
+    color: #fff;
+  }
+}

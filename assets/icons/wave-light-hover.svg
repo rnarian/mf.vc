@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="16px" height="14px" viewBox="0 0 16 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 4 Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M-6.5,6.98165937 C-5.58105653,7.67086697 -4.8759064,8.19972957 -4.8759064,8.19972957 C-3.55022385,9.19399148 -1.39663021,9.19081332 -0.0752820185,8.19980218 L3.12419041,5.80019785 C4.44981949,4.80597604 6.60336979,4.80918671 7.92471798,5.80019785 L11.1241904,8.19980218 C12.4498195,9.19402399 14.6033698,9.19081332 15.924718,8.19980217 L19.1241904,5.80019784 C20.4498195,4.80597603 22.6033698,4.8091867 23.924718,5.80019784 L27.1241904,8.19980216 C28.4498195,9.19402397 30.6033698,9.19081331 31.924718,8.19980216 L35.1241904,5.80019785 C36.4498195,4.80597604 38.6033698,4.80918671 39.924718,5.80019785 L43.1241904,8.19980216 C44.4498195,9.19402398 46.6033698,9.19081331 47.924718,8.19980216 L51.1241904,5.80019785 C52.4498195,4.80597604 54.6014775,4.80776747 55.9233879,5.79920031 C55.9233879,5.79920031 56.6541872,6.34729979 57.5852419,7.04559076" id="Path-1-Copy-21" stroke="#FFFFFF" stroke-width="2" sketch:type="MSShapeGroup">
+          <animateMotion dur=".3s"
+          values="0,0; -16,0;"
+          repeatCount="indefinite" />
+      </path>
+    </g>
+</svg>
