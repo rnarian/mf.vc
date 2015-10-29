@@ -1,0 +1,10 @@
+---
+mf.vc.dev:
+  title: mf.vc
+  php:
+    build: system
+  vhost:
+    servername: mf.vc.dev
+    serveraliases:
+      - www.mf.vc.dev
+    ssl: true
