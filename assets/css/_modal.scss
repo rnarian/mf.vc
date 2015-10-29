@@ -1,13 +1,5 @@
-/* Generated with Bounce.js. Edit at http://goo.gl/IA3AMV */
-
 .modal--error {
   animation: flash 200ms linear 1 both;
-}
-
-@keyframes flash {
-  0% { background: $colorMain; }
-  10% { background: #fff; }
-  100% { background: $colorMain; }
 }
 
 .modal {
