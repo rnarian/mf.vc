@@ -1,7 +1,11 @@
 /* Generated with Bounce.js. Edit at http://goo.gl/IA3AMV */
 
-.error {
+.form--error {
   animation: shake 1000ms linear 1 both;
+}
+
+.modal--error {
+  animation: flash 200ms linear 1 both;
 }
 
 @keyframes shake {
@@ -24,6 +28,12 @@
   86.79% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.001, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.001, 0, 0, 1); }
   95.1% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
   100% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+}
+
+@keyframes flash {
+  0% { background: $colorMain; }
+  10% { background: #fff; }
+  100% { background: $colorMain; }
 }
 
 .modal {

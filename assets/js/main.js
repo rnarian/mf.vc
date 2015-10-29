@@ -46,9 +46,11 @@ $(function() {
         },300);
       } else {
         $('.js-form-error').text(data);
-        $('.form').removeClass('error');
+        $('.form').removeClass('form--error');
+        $('.modal').removeClass('modal--error');
         setTimeout(function() {
-          $('.form').addClass('error');
+          $('.form').addClass('form--error');
+          $('.modal').addClass('modal--error');
         }, 10);
       }
     });
