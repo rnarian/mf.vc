@@ -50,7 +50,6 @@
 </head>
 <body>
 
-  <!-- 3, 2, 1 - Action! -->
   <div class="center">
     <div class="center__inner">
       <div class="post-it post-it--taped">
@@ -74,6 +73,24 @@
       <div class="center__inner">
         <div class="constrain constrain--medium modal__animation modal__animation--1">
           <div class="form">
+            <form action="mail.php" method="post">
+              <label>
+                Mail
+                <span class="fade fade--vertical">
+                  <input name="mail" type="email" focus/>
+                </span>
+              </label>
+              <label>
+                Message
+                <span class="fade fade--horizontal">
+                  <textarea name="message"></textarea>
+                </span>
+              </label>
+              <div class="text--right">
+                <span class="form__error js-form-error"></span>
+                <button class="wave wave--light">Send.</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
