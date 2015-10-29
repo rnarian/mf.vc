@@ -10,19 +10,19 @@ $(function() {
 
 
 
-  $('.open-modal').click(function(e) {
+  $('.js-open-modal').click(function(e) {
     e.preventDefault();
-    $('.modal').addClass('modal--open');
-    $('.post-it').addClass('post-it--hidden');
+    $('.js-modal').addClass('modal--open');
+    $('.js-post-it').addClass('post-it--hidden');
   });
 
-  $('.close-modal').click(function(e) {
+  $('.js-close-modal').click(function(e) {
     e.preventDefault();
-    $('.modal').removeClass('modal--open');
-    $('.post-it').removeClass('post-it--hidden');
+    $('.js-modal').removeClass('modal--open');
+    $('.js-post-it').removeClass('post-it--hidden');
   });
 
-  $('form').submit(function(e) {
+  $('.js-form').submit(function(e) {
     e.preventDefault();
 
     var formMail = $(this).find('input'),
@@ -37,8 +37,8 @@ $(function() {
 
     posting.done(function( data ) {
       if (data == 'Mail sent successfully') {
-        $('.modal').removeClass('modal--open');
-        $('.post-it').removeClass('post-it--hidden');
+        $('.js-modal').removeClass('modal--open');
+        $('.js-post-it').removeClass('post-it--hidden');
         setTimeout(function() {
           $('.js-form-error').text('');
           formMail.val('');
@@ -46,11 +46,11 @@ $(function() {
         },300);
       } else {
         $('.js-form-error').text(data);
-        $('.form').removeClass('form--error');
-        $('.modal').removeClass('modal--error');
+        $('.js-form').removeClass('form--error');
+        $('.js-modal').removeClass('modal--error');
         setTimeout(function() {
-          $('.form').addClass('form--error');
-          $('.modal').addClass('modal--error');
+          $('.js-form').addClass('form--error');
+          $('.js-modal').addClass('modal--error');
         }, 10);
       }
     });
