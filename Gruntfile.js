@@ -125,7 +125,12 @@ module.exports = function(grunt) {
                 options: {
                     cssprefix: ".icon--",
                     customselectors: {
-                      "*": [".icon--$1:before"]
+                      "*": [".icon--$1:before"],
+                      "wave": [".wave--main:after"],
+                      "wave-light": [".wave--light:after"],
+                      "wave-bg": ["a.wave"],
+                      "wave-border": [".modal--wave:before"],
+                      "tape": [".post-it--taped:before"]
                     }
                 }
             }
