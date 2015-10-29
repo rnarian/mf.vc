@@ -41,6 +41,10 @@ $basePageBreak: $breakLaptop min-height 600px;
  * e.g. @import 'nav';
  */
 
+.constrain {
+  padding: 0 $baseUnit;
+}
+
 @import 'base';
 @import 'center';
 @import 'post-it';
