@@ -8,10 +8,6 @@
   visibility: hidden;
   transition: .3s ease-out .30s;
 
-  &--error {
-    animation: flash 200ms linear 1 both;
-  }
-
   &__header {
     padding: $baseUnit;
     position: relative;
@@ -30,7 +26,7 @@
       right: 0;
       bottom: 0;
       opacity: 0;
-      transition: .3s .1s;
+      transition: opacity .3s .1s;
     }
   }
 
@@ -41,7 +37,7 @@
     }
     color: #fff;
     opacity: 0;
-    transition: .3s .1s;
+    transition: opacity .3s .1s;
   }
 
   &__close {
@@ -59,7 +55,7 @@
     border: none;
     text-indent: -99999px;
     opacity: 0;
-    transition: .3s .1s;
+    transition: opacity .3s .1s;
     &:before,
     &:after {
       position: absolute;
@@ -84,6 +80,12 @@
     }
   }
 
+  &__content {
+    opacity: 0;
+    transition: opacity .9s ease-out;
+    transform: translateY(150%);
+  }
+
   &--open {
     visibility: visible;
     transition: .3s ease-out .15s;
@@ -91,45 +93,38 @@
 
     .modal__header {
       &:before {
-        transition: 1s 1.5s;
+        transition: opacity 1s 1.5s;
         opacity: 1;
       }
     }
 
     .modal__title {
-      transition: .75s 1s;
+      transition: opacity .75s 1s;
       opacity: 1;
     }
 
     .modal__close {
-      transition: .75s .75s;
+      transition: opacity .75s .75s;
       opacity: 1;
       &:hover:before {
         transform: rotate(45deg);
-        transition: .3s .1s ease-out;
+        transition: transform .3s .1s ease-out;
       }
       &:hover:after {
         transform: rotate(135deg);
-        transition: .3s ease-out;
+        transition: transform .3s ease-out;
       }
     }
+
+    .modal__content {
+      transition: .5s ease-out .1s;
+      transform: translate(0);
+      opacity: 1;
+    }
   }
-}
 
-.modal__animation {
-  opacity: 0;
-  transition: .9s ease-out;
-}
-
-.modal__animation--1 {
-  transform: translateY(150%);
-}
-
-.modal--open {
-  .modal__animation--1 {
-    transition: .5s ease-out .1s;
-    transform: translate(0);
-    opacity: 1;
+  &--error {
+    animation: flash 200ms linear 1 both;
   }
 }
 
