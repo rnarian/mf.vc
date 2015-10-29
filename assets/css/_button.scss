@@ -31,3 +31,11 @@
     color: #fff;
   }
 }
+
+.button--large {
+  @include font-size(36px,false);
+  @include media($basePageBreak) {
+    @include font-size(48px,false);
+  }
+  line-height: 1.25;
+}
