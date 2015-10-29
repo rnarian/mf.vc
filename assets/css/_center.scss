@@ -9,3 +9,9 @@
     }
   }
 }
+
+.center--modal {
+  @include media($basePageBreak) {
+    padding-top: $baseUnit*4;
+  }
+}
