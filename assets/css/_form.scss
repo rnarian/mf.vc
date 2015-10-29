@@ -1,7 +1,8 @@
-.form--error {
-  animation: shake 1000ms linear 1 both;
-}
 .form {
+  &--error {
+    animation: shake 1000ms linear 1 both;
+  }
+
   label,
   input,
   textarea {
