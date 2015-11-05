@@ -4,13 +4,14 @@
   left: 0;
   right: 0;
   height: 100%;
-  transform: translateY(110%);
   visibility: hidden;
-  transition: .3s ease-out .30s;
-
+  transform: translateY(110%);
+  transition: .3s ease-out .3s;
+  overflow: auto;
   &__header {
     padding: $baseUnit;
     position: relative;
+    z-index: 1;
     @include media($basePageBreak) {
       position: absolute;
       top: 0;
@@ -25,8 +26,9 @@
       left: 0;
       right: 0;
       bottom: 0;
+      visibility: hidden;
       opacity: 0;
-      transition: opacity .3s .1s;
+      transition: .3s .1s;
     }
   }
 
@@ -36,15 +38,15 @@
       @include font-size(32px, false);
     }
     color: #fff;
+    visibility: hidden;
     opacity: 0;
-    transition: opacity .3s .1s;
+    transition: .3s .1s;
   }
 
   &__close {
     position: absolute;
     right: $baseUnit/1.5;
     top: 50%;
-    transform: translateY(-50%);
     width: 30px;
     height: 30px;
     @include media($basePageBreak) {
@@ -54,8 +56,10 @@
     background: transparent;
     border: none;
     text-indent: -99999px;
+    visibility: hidden;
     opacity: 0;
-    transition: opacity .3s .1s;
+    transform: translateY(-50%);
+    transition: .3s .1s;
     &:before,
     &:after {
       position: absolute;
@@ -78,48 +82,108 @@
     &:after {
       transform: rotate(45deg);
     }
+    &:hover:before {
+      transform: rotate(45deg);
+      transition: transform .3s .1s ease-out;
+    }
+    &:hover:after {
+      transform: rotate(135deg);
+      transition: transform .3s ease-out;
+    }
   }
 
-  &__content {
+  &__success {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    visibility: hidden;
     opacity: 0;
-    transition: opacity .9s ease-out;
-    transform: translateY(150%);
+    transform: translateY(50%);
+    transition: .3s ease-out;
+  }
+
+  $easePopOut: cubic-bezier(.52,-0.22,.43,.5);
+
+  &__content {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: .9s $easePopOut;
+  }
+
+  &--open,
+  &--success {
+    visibility: visible;
+    transform: translateY(0);
+    transition: .3s ease-out .15s;
   }
 
   &--open {
-    visibility: visible;
-    transition: .3s ease-out .15s;
-    transform: translateY(0);
-
     .modal__header {
       &:before {
-        transition: opacity 1s 1.5s;
+        visibility: visible;
         opacity: 1;
+        transition: opacity 1s 1.5s;
       }
     }
 
     .modal__title {
-      transition: opacity .75s 1s;
+      visibility: visible;
       opacity: 1;
+      transition: opacity .75s 1s;
     }
 
     .modal__close {
-      transition: opacity .75s .75s;
+      visibility: visible;
       opacity: 1;
-      &:hover:before {
-        transform: rotate(45deg);
-        transition: transform .3s .1s ease-out;
-      }
-      &:hover:after {
-        transform: rotate(135deg);
-        transition: transform .3s ease-out;
-      }
+      transition: opacity .75s .75s;
+    }
+
+    .modal__success {
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(-50%);
     }
 
     .modal__content {
-      transition: .5s ease-out .1s;
-      transform: translate(0);
+      visibility: visible;
       opacity: 1;
+      transform: translateY(0);
+      transition: .5s ease-out .1s;
+    }
+  }
+
+  &--success {
+    .modal__header:before,
+    .modal__title {
+      visibility: hidden;
+      opacity: 0;
+      transition: .3s;
+    }
+    .modal__close {
+      visibility: visible;
+      opacity: 1 !important;
+      transition: .3s;
+    }
+    .modal__success {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+      transition: .3s .6s;
+    }
+    .modal__content {
+      visibility: hidden;
+      opacity: 0;
+      transition: .5s $easePopOut .1s;
+      transform: translateY(100%);
+    }
+  }
+
+  &--disabled {
+    .modal__content {
+      transform: scale(.8);
     }
   }
 
@@ -139,6 +203,5 @@
     height: 36px;
     background-size: auto 100% ;
     background-repeat: repeat-x !important;
-    //display: none;
   }
 }

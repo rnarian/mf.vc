@@ -21,6 +21,7 @@ $(function() {
     e.preventDefault();
     $('.js-modal').removeClass('modal--open');
     $('body').removeClass('no-scroll');
+    $('.js-modal').removeClass('modal--success');
     $('.js-post-it').removeClass('post-it--hidden');
   });
 
@@ -37,15 +38,24 @@ $(function() {
 
     var posting = $.post( '../../mail.php', formData );
 
+    $('.js-form-submit').text('Sending...');
+    $('.js-form-error').text('');
+
     posting.done(function( data ) {
+      $('.js-form-submit').text($('.js-form-submit').attr('data-original'));
       if (data == 'Mail sent successfully') {
         $('.js-modal').removeClass('modal--open');
-        $('.js-post-it').removeClass('post-it--hidden');
+        $('.js-modal').addClass('modal--success');
         setTimeout(function() {
           $('.js-form-error').text('');
           formMail.val('');
           formMsg.val('');
         },300);
+
+        // setTimeout(function() {
+        //   $('.js-modal').removeClass('modal--success');
+        //   $('.js-post-it').removeClass('post-it--hidden');
+        // },1200);
       } else {
         $('.js-form-error').text(data);
         $('.js-form').removeClass('form--error');

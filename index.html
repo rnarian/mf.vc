@@ -69,9 +69,16 @@
       <span class="modal__title">New message to Marian</span>
       <button class="modal__close js-close-modal">close</button>
     </header>
-    <div class="center center--modal">
+    <div class="modal__success center center--force">
       <div class="center__inner">
-        <div class="constrain constrain--medium modal__animation modal__animation--1">
+        <div class="constrain text--center">
+          <h1 class="headline headline--darkbg"> Mail successfully sent!</h1>
+        </div>
+      </div>
+    </div>
+    <div class="modal__content center center--modal">
+      <div class="center__inner">
+        <div class="constrain constrain--medium">
           <div class="form js-form">
             <form action="mail.php" method="post">
               <label>
@@ -88,7 +95,7 @@
               </label>
               <div class="text--right">
                 <span class="form__error js-form-error"></span>
-                <button class="button button--wave-light button--large">Send.</button>
+                <button class="button button--wave-light button--large js-form-submit" data-original="Send">Send.</button>
               </div>
             </form>
           </div>
