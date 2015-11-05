@@ -5,3 +5,12 @@
 .headline--darkbg {
   color: #fff;
 }
+
+.heading-1 {
+  @include font-size(32px,false);
+  @include media($basePageBreak) {
+    max-width: $constrainLarge;
+    margin: 0 auto;
+    @include font-size(48px,false);
+  }
+}
