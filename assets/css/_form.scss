@@ -96,16 +96,19 @@
   &:after {
     top: 0;
     bottom: 0;
-    width: $baseUnit*1.5;
+    width: ceil($baseUnit*.75);
+    @include media($basePageBreak) {
+      width: $baseUnit*1.25;
+    }
   }
   &:before {
     left: 0;
-    background: linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255,1) 80%);
+    background: linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255,1) 70%);
   }
 
   &:after {
     right: 0;
-    background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1) 80%);
+    background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1) 70%);
   }
 }
 
@@ -114,7 +117,10 @@
   &:after {
     left: 0;
     right: 0;
-    height: $baseUnit*1.5;
+    height: ceil($baseUnit*.75);
+    @include media($basePageBreak) {
+      height: $baseUnit*1.25;
+    }
   }
   &:before {
     top: 0;
