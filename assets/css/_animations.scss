@@ -27,3 +27,9 @@
   10% { background: #fff; }
   100% { background: $colorMain; }
 }
+
+@keyframes pulse {
+  0% { color: #fff; }
+  80% { color: lighten($colorMain, 40%); }
+  100% { color: #fff;  }
+}

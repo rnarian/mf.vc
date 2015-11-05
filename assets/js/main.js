@@ -38,11 +38,11 @@ $(function() {
 
     var posting = $.post( '../../mail.php', formData );
 
-    $('.js-form-submit').text('Sending...');
+    $('.js-form-submit').addClass('button--pulse-on');
     $('.js-form-error').text('');
 
     posting.done(function( data ) {
-      $('.js-form-submit').text($('.js-form-submit').attr('data-original'));
+      $('.js-form-submit').removeClass('button--pulse-on');
       if (data == 'Mail sent successfully') {
         $('.js-modal').removeClass('modal--open');
         $('.js-modal').addClass('modal--success');
