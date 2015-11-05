@@ -1,11 +1,15 @@
 .post-it {
   background: $colorPostIt;
   padding: $baseUnit $baseUnit*1.5;
-  max-width: $constrainLarge;
-  margin: 0 auto;
   @include font-size(36px,false);
   @include media($basePageBreak) {
+    max-width: inherit;
+    margin: 0 $baseUnit;
     padding: $baseUnit*2 $baseUnit*2.5;
+  }
+  @include media($breakLaptop + 100 min-height 400px) {
+    max-width: $constrainLarge;
+    margin: 0 auto;
     @include font-size(48px,false);
   }
   line-height: 1.25;
