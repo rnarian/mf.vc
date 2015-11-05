@@ -13,12 +13,14 @@ $(function() {
   $('.js-open-modal').click(function(e) {
     e.preventDefault();
     $('.js-modal').addClass('modal--open');
+    $('body').addClass('no-scroll');
     $('.js-post-it').addClass('post-it--hidden');
   });
 
   $('.js-close-modal').click(function(e) {
     e.preventDefault();
     $('.js-modal').removeClass('modal--open');
+    $('body').removeClass('no-scroll');
     $('.js-post-it').removeClass('post-it--hidden');
   });
 
