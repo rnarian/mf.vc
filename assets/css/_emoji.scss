@@ -1,0 +1,8 @@
+.emoji {
+  font-family: "Helvetica Neue", sans-serif;
+  @include font-size(36px,false);
+  @include media($basePageBreak) {
+    padding: $baseUnit*2 $baseUnit*2.5;
+    @include font-size(48px,false);
+  }
+}
