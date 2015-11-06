@@ -6,8 +6,8 @@
   height: 100%;
   visibility: hidden;
   transform: translateY(110%);
-  transition: .3s ease-out .3s;
-  overflow: auto;
+  transition: .3s ease-out .4s;
+  //overflow: auto;
   &__header {
     padding: $baseUnit;
     position: relative;
@@ -92,6 +92,8 @@
     }
   }
 
+    $easePopOut: cubic-bezier(.52,-0.22,.43,.5);
+
   &__success {
     position: absolute;
     top: 0;
@@ -101,10 +103,8 @@
     visibility: hidden;
     opacity: 0;
     transform: translateY(50%);
-    transition: .3s ease-out;
+    transition: .3s ease-in;
   }
-
-  $easePopOut: cubic-bezier(.52,-0.22,.43,.5);
 
   &__content {
     visibility: hidden;
