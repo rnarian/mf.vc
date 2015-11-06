@@ -50,17 +50,16 @@
 </head>
 <body class="no-show">
 
-    <div class="post-it">
-      <div class="post-it__content js-post-it">
-        <p>
-          Marian Friedmann. <br>Web Designer and Front-End Developer based in Würzburg, Germany.
-        </p>
-        <p>
-          <a class="button button--wave js-open-modal" href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#105;&#64;&#109;&#97;&#114;&#105;&#97;&#110;&#102;&#114;&#105;&#101;&#100;&#109;&#97;&#110;&#110;&#46;&#100;&#101;">Get in touch.</a>
-        </p>
-      </div>
+  <div class="post-it">
+    <div class="post-it__content js-post-it">
+      <p>
+        Marian Friedmann. <br>Web Designer and Front-End Developer based in Würzburg, Germany.
+      </p>
+      <p>
+        <a class="button button--wave js-open-modal" href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#105;&#64;&#109;&#97;&#114;&#105;&#97;&#110;&#102;&#114;&#105;&#101;&#100;&#109;&#97;&#110;&#110;&#46;&#100;&#101;">Get in touch.</a>
+      </p>
     </div>
-
+  </div>
 
   <div class="modal modal--wave js-modal">
     <header class="modal__header">
@@ -92,9 +91,13 @@
                   <textarea name="message"></textarea>
                 </span>
               </label>
-              <div class="text--right">
-                <span class="form__error js-form-error"></span>
-                <button class="button button--pulse button--large js-form-submit" data-original="Send">Send.</button>
+              <div class="grid">
+                <div class="grid__item width--3of4">
+                  <span class="form__error js-form-error"></span>
+                </div><!--
+             --><div class="grid__item width--1of4 text--right">
+                  <button class="button button--pulse button--large js-form-submit" data-original="Send">Send.</button>
+                </div>
               </div>
             </form>
           </div>
