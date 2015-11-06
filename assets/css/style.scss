@@ -36,6 +36,7 @@ $fontPrimary: "futura-pt", sans-serif;
 
 @import 'bower_components/basicss/basicss';
 $basePageBreak: $breakTablet min-height 600px;
+$basePageBreakSmall: 360px min-height 400px;
 /**
  * userstyle imports
  *
