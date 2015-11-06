@@ -62,7 +62,7 @@
   }
 
   textarea {
-    height: $baseUnit*4;
+    height: $baseUnit*6;
     padding: $baseUnit/2;
     @include font-size(16px, false);
     @include media($basePageBreak) {
