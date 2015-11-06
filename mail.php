@@ -27,6 +27,9 @@ function deliver($mail, $message) {
   echo ($send) ? 'Mail sent successfully' : 'Could not send mail';
 }
 
+usleep(300000);
+//sleep(2);
+
 // validate & send
 if (!$mail) {
   echo "Mail is missing";
