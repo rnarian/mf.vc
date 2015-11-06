@@ -15,7 +15,7 @@ $(function() {
     e.preventDefault();
     $('.js-modal').addClass('modal--open');
     $('body').addClass('no-scroll');
-    $('.js-post-it').addClass('post-it--hidden');
+    $('.js-post-it').addClass('post-it__content--hidden');
   });
 
   $('.js-close-modal').click(function(e) {
@@ -23,7 +23,7 @@ $(function() {
     $('.js-modal').removeClass('modal--open');
     $('body').removeClass('no-scroll');
     $('.js-modal').removeClass('modal--success');
-    $('.js-post-it').removeClass('post-it--hidden');
+    $('.js-post-it').removeClass('post-it__content--hidden');
   });
 
   $('.js-form').submit(function(e) {
