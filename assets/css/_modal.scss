@@ -7,7 +7,19 @@
   visibility: hidden;
   transform: translateY(110%);
   transition: .3s ease-out .4s;
-  //overflow: auto;
+
+  // modal error, see modal--error:after and animations.scss
+  &:after {
+    position: fixed;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    visibility: hidden;
+    z-index: 1;
+  }
+
   &__header {
     padding: $baseUnit;
     position: relative;
@@ -92,7 +104,7 @@
     }
   }
 
-    $easePopOut: cubic-bezier(.52,-0.22,.43,.5);
+  $easePopOut: cubic-bezier(.52,-0.22,.43,.5);
 
   &__success {
     position: absolute;
@@ -187,7 +199,7 @@
     }
   }
 
-  &--error {
+  &--error:after {
     animation: flash 200ms linear 1 both;
   }
 }
