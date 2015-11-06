@@ -10,3 +10,12 @@ body {
 .no-scroll {
   overflow: hidden;
 }
+
+body {
+  opacity: 1;
+  transition: .3s ease-out;
+}
+
+.no-show {
+  opacity: 0;
+}

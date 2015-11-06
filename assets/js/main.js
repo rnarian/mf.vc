@@ -7,6 +7,7 @@
 
 $(function() {
 
+  $('body').removeClass('no-show');
 
 
 
