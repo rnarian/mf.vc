@@ -1,41 +1,55 @@
 .post-it {
   background: $colorPostIt;
-  padding: $baseUnit $baseUnit*1.5;
-  @include font-size(36px,false);
-  @include media($basePageBreak) {
-    max-width: inherit;
-    margin: 0 $baseUnit;
-    padding: $baseUnit*2 $baseUnit*2.5;
-  }
-  @include media($breakLaptop + 100 min-height 400px) {
-    max-width: $constrainLarge;
-    margin: 0 auto;
-    @include font-size(48px,false);
-  }
-  line-height: 1.25;
-  position: relative;
-  color: $colorDarkText;
-  transition: .9s transform;
-  transform: translateY(0);
-  p:last-child {
-    margin-bottom: 0;
+  min-height: 100%;
+  @media screen and (min-width: 360px) and (min-height: 520px), (min-width: 520px) and (min-height: 360px) {
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    padding: $baseUnit;
   }
 
-  &--hidden {
-    transform: translateY(-300%);
-  }
+  &__content {
+    background: $colorPostIt;
+    padding: $baseUnit $baseUnit*1.5;
+    width: 100%;
+    height: 100%;
+    @include font-size(36px, false);
+    line-height: 1.25;
+    position: relative;
+    color: $colorDarkText;
+    transform: translateY(0);
+    transition: transform .9s ease-out;
 
-  &--taped {
-    &:before {
-      position: absolute;
-      content: '';
-      top: -$baseUnit*2;
-      left: 50%;
-      margin-left: -86px;
-      width: 172px;
-      height: 102px;
-      transform: rotate(-5deg);
-      opacity: .2;
+    @media screen and (min-width: 360px) and (min-height: 520px), (min-width: 520px) and (min-height: 360px) {
+      max-width: $constrainMedium;
+      width: auto;
+      height: auto;
+      margin: 0 auto;
+      padding: $baseUnit*1.5 $baseUnit;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    @include media($breakLaptop min-height 600px) {
+      max-width: $constrainLarge;
+      padding: $baseUnit*2 $baseUnit*2.5;
+      @include font-size(48px, false);
+    }
+
+    @include media($breakDesktopWide min-height 1000px) {
+      max-width: $constrainMax;
+      padding: $baseUnit*2 $baseUnit*2.5;
+      @include font-size(69px, false);
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    &--hidden {
+      transform: translateY(-300%);
+      transition: transform .9s;
     }
   }
 }
