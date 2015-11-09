@@ -130,7 +130,7 @@ module.exports = function(grunt) {
                       "wave-hover": [".button--wave:hover:before"],
                       "wave-light": [".button--wave-light:before"],
                       "wave-light-hover": [".button--wave-light:hover:before",".button--pulse-on:before"],
-                      "wave-border": [".modal--wave:before"]
+                      "wave-border": [".modal:before"]
                     }
                 }
             }
