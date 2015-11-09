@@ -19,10 +19,3 @@
     vertical-align: middle;
   }
 }
-
-.center--modal {
-  padding-top: $baseUnit*1;
-  @include media($basePageBreakSmall) {
-    padding-top: $baseUnit*4;
-  }
-}
