@@ -55,10 +55,6 @@ $(function() {
           formMsg.val('');
         },300);
 
-        // setTimeout(function() {
-        //   $('.js-modal').removeClass('modal--success');
-        //   $('.js-post-it').removeClass('post-it--hidden');
-        // },1200);
       } else {
         $('.js-form-error').text(data);
         $('.js-form').removeClass('form--error');
