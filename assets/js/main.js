@@ -40,10 +40,12 @@ $(function() {
     var posting = $.post( '../../mail.php', formData );
 
     $('.js-form-submit').addClass('button--pulse-on');
+    $('.js-form-submit').attr('disabled', 'disabled');
     $('.js-form-error').text('');
 
     posting.done(function( data ) {
       $('.js-form-submit').removeClass('button--pulse-on');
+      $('.js-form-submit').attr('disabled', false);
       if (data == 'Mail sent successfully') {
         $('.js-modal').removeClass('modal--open');
         $('.js-modal').addClass('modal--success');
