@@ -33,3 +33,10 @@
   80% { color: lighten($colorMain, 40%); }
   100% { color: #fff;  }
 }
+
+@keyframes emojiflip {
+  0% { content: "🤘"; }
+  25% { content: "👌"; }
+  50% { content: "🖖"; }
+  75% { content: "🖐"; }
+}

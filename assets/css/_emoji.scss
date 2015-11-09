@@ -6,3 +6,10 @@
     @include font-size(48px,false);
   }
 }
+
+.emoji {
+  &:before {
+    content: '🤘';
+    animation: emojiflip 1000ms linear infinite both;
+  }
+}
