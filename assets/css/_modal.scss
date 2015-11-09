@@ -1,12 +1,26 @@
+$easePopOut: cubic-bezier(.52,-0.22,.43,.5);
+
 .modal {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 100%;
-  visibility: hidden;
+  bottom: 0;
+  background: $colorMain;
   transform: translateY(110%);
   transition: .3s ease-out .4s;
+
+  // wave border
+  &:before {
+    position: absolute;
+    content: '';
+    top: -36px;
+    left: 0;
+    right: 0;
+    height: 36px;
+    background-size: auto 100% ;
+    background-repeat: repeat-x !important;
+  }
 
   // modal error, see modal--error:after and animations.scss
   &:after {
@@ -20,200 +34,139 @@
     z-index: 1;
   }
 
-  &__header {
-    padding: $baseUnit;
-    position: relative;
-    z-index: 1;
-    @include media($basePageBreakSmall) {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-    }
-    &:before {
-      position: absolute;
-      background: rgba(255,255,255,.1);
-      content: '';
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      visibility: hidden;
-      opacity: 0;
-      transition: .3s .1s;
-    }
-  }
-
-  &__title {
-    @include font-size(21px, false);
-    @include media($basePageBreak) {
-      @include font-size(32px, false);
-    }
-    color: #fff;
-    visibility: hidden;
-    opacity: 0;
-    transition: .3s .1s;
-  }
-
-  &__close {
-    position: absolute;
-    right: $baseUnit/1.5;
-    top: 50%;
-    width: 30px;
-    height: 30px;
-    @include media($basePageBreak) {
-      width: 50px;
-      height: 50px;
-    }
-    background: transparent;
-    border: none;
-    text-indent: -99999px;
-    visibility: hidden;
-    opacity: 0;
-    transform: translateY(-50%);
-    transition: .3s .1s;
-    &:before,
-    &:after {
-      position: absolute;
-      content: '';
-      left: 0;
-      right: 0;
-      top: 50%;
-      height: 6px;
-      margin-top: -3px;
-      @include media($basePageBreak) {
-        height: 10px;
-        margin-top: -5px;
-      }
-      background: #fff;
-    }
-    &:before {
-      transform: rotate(-45deg);
-    }
-
-    &:after {
-      transform: rotate(45deg);
-    }
-    &:hover:before {
-      transform: rotate(45deg);
-      transition: transform .3s .1s ease-out;
-    }
-    &:hover:after {
-      transform: rotate(135deg);
-      transition: transform .3s ease-out;
-    }
-  }
-
-  $easePopOut: cubic-bezier(.52,-0.22,.43,.5);
-
-  &__success {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    visibility: hidden;
-    opacity: 0;
-    transform: translateY(50%);
-    transition: .3s ease-in;
-  }
-
-  &__content {
-    visibility: hidden;
-    opacity: 0;
-    transform: translateY(100%);
-    transition: .9s $easePopOut;
+  &--error:after {
+    animation: flash 200ms linear 1 both;
   }
 
   &--open,
   &--success {
-    visibility: visible;
     transform: translateY(0);
     transition: .3s ease-out .15s;
   }
+}
 
-  &--open {
-    .modal__header {
-      &:before {
-        visibility: visible;
-        opacity: 1;
-        transition: opacity 1s 1.5s;
-      }
-    }
+.modal__header {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: $baseUnit;
 
-    .modal__title {
+  // modal__header background
+  &:before {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(lighten($colorMain, 10%), .8);
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s .1s;
+    .modal--open & {
       visibility: visible;
       opacity: 1;
-      transition: opacity .75s 1s;
+      transition: opacity 1s 1.5s;
     }
-
-    .modal__close {
-      visibility: visible;
-      opacity: 1;
-      transition: opacity .75s .75s;
-    }
-
-    .modal__success {
-      visibility: hidden;
-      opacity: 0;
-      transform: translateY(-50%);
-    }
-
-    .modal__content {
-      visibility: visible;
-      opacity: 1;
-      transform: translateY(0);
-      transition: .5s ease-out .1s;
-    }
-  }
-
-  &--success {
-    .modal__header:before,
-    .modal__title {
-      visibility: hidden;
-      opacity: 0;
-      transition: .3s;
-    }
-    .modal__close {
-      visibility: visible;
-      opacity: 1 !important;
-      transition: .3s;
-    }
-    .modal__success {
-      visibility: visible;
-      opacity: 1;
-      transform: translateY(0);
-      transition: .3s .6s;
-    }
-    .modal__content {
-      visibility: hidden;
-      opacity: 0;
-      transition: .5s $easePopOut .1s;
-      transform: translateY(100%);
-    }
-  }
-
-  &--disabled {
-    .modal__content {
-      transform: scale(.8);
-    }
-  }
-
-  &--error:after {
-    animation: flash 200ms linear 1 both;
   }
 }
 
-.modal--wave {
-  background: $colorMain;
-  &:before {
-    position: absolute;
-    content: '';
-    top: -36px;
-    left: 0;
-    right: 0;
-    height: 36px;
-    background-size: auto 100% ;
-    background-repeat: repeat-x !important;
+.modal__title {
+  @include font-size(21px, false);
+  @include media($basePageBreak) {
+    @include font-size(32px, false);
+  }
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s .1s;
+
+  .modal--open & {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .75s 1s;
+  }
+
+  .modal--success & {
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+  }
+}
+
+.modal__close {
+  position: absolute;
+  right: $baseUnit/1.5;
+  top: 50%;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-50%);
+  transition: .3s .1s;
+
+  .modal--open & {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .75s .75s;
+  }
+  .modal--success & {
+    visibility: visible;
+    opacity: 1 !important;
+    transition: .3s;
+  }
+}
+
+.modal__scrollable,
+.modal__success {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modal__scrollable {
+  overflow: auto;
+  padding-top: $baseUnit*4; // height of modal__header
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: .9s $easePopOut;
+
+  .modal--open & {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition: .5s ease-out .1s;
+  }
+
+  .modal--success & {
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s $easePopOut .1s;
+    transform: translateY(100%);
+  }
+}
+
+.modal__success {
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(50%);
+  transition: .3s ease-in;
+
+  .modal--open & {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+
+  .modal--success & {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition: .3s .6s;
   }
 }
