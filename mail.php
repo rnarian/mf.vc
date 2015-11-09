@@ -27,7 +27,7 @@ function deliver($mail, $message) {
   echo ($send) ? 'Mail sent successfully' : 'Could not send mail';
 }
 
-usleep(300000);
+//usleep(300000);
 //sleep(2);
 
 // validate & send
@@ -39,6 +39,7 @@ if (!$mail) {
   echo "Message is missing";
 } else {
   deliver($mail, $message);
+  usleep(300000);
 }
 
 ?>
