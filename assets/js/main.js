@@ -45,7 +45,7 @@ $(function() {
       message: formMsg.val()
     };
 
-    var posting = $.post( 'http://mf.vc/new/mail.php', formData );
+    var posting = $.post((document.location.hostname === 'mf.vc' ? 'http://mf.vc/new' : '../..') + '/mail.php', formData );
 
     $formSubmit.addClass('button--pulse-on');
     $formSubmit.attr('disabled', 'disabled');
