@@ -43,6 +43,10 @@ $easePopOut: cubic-bezier(.52,-0.22,.43,.5);
     transform: translateY(0);
     transition: .3s ease-out .15s;
   }
+
+  .old-ie & {
+    display: none;
+  }
 }
 
 .modal__header {
