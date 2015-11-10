@@ -12,3 +12,8 @@ body {
 .no-show {
   opacity: 0;
 }
+
+a, button, input {
+  touch-action: manipulation;
+  -ms-touch-action: manipulation
+}
