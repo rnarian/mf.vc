@@ -1,19 +1,12 @@
 html,
 body {
   height: 100%;
-  // background: $colorPostIt;
-  // @include media($basePageBreak) {
-  //   background: #fff;
-  // }
-}
-
-.no-scroll {
-  overflow: hidden;
 }
 
 body {
   opacity: 1;
-  transition: .3s ease-out;
+  transition: opacity .3s ease-out;
+  overflow: hidden;
 }
 
 .no-show {
