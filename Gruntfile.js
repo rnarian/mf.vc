@@ -36,7 +36,7 @@ module.exports = function(grunt) {
         // CSS autoprefixer
         autoprefixer: {
             options: {
-                browsers: ['last 2 versions']
+                browsers: ['last 2 versions', 'ie 9']
             },
             dist: {
                 files: {
@@ -63,6 +63,7 @@ module.exports = function(grunt) {
             dist: {
                 src: [
                     '<%= dirs.bower %>/jquery/dist/jquery.js',
+                    '<%= dirs.bower %>/fastclick/lib/fastclick.js',
                     '<%= dirs.js %>/*.js',
                     '!<%= dirs.js %>/modernizr.js',
                     '!<%= dirs.js %>/build.js'

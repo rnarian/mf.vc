@@ -43,6 +43,10 @@
       @include font-size(69px, false);
     }
 
+    .old-ie & {
+      width: $constrainMedium;
+    }
+
     p:last-child {
       margin-bottom: 0;
     }
