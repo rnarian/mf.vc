@@ -36,7 +36,7 @@ module.exports = function(grunt) {
         // CSS autoprefixer
         autoprefixer: {
             options: {
-                browsers: ['last 2 versions']
+                browsers: ['last 2 versions', 'ie 9']
             },
             dist: {
                 files: {
