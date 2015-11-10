@@ -7,27 +7,34 @@
 
 $(function() {
 
-  $('body').removeClass('no-show');
+  var $modal = $('.js-modal'),
+      $body = $('body'),
+      $postIt = $('.js-post-it');
 
+  var $form = $('.js-form'),
+      $formSubmit = $('.js-form-submit'),
+      $formError = $('.js-form-error');
 
+  $body.removeClass('no-show');
 
-  $('.js-open-modal').click(function(e) {
-    e.preventDefault();
-    $('.js-modal').addClass('modal--open');
-    $('.js-post-it').addClass('post-it__content--hidden');
-  });
   FastClick.attach(document.body);
 
-  $('.js-close-modal').click(function(e) {
-    e.preventDefault();
-    $('.js-modal').removeClass('modal--open');
-    $('.js-modal').removeClass('modal--success');
-    $('.js-post-it').removeClass('post-it__content--hidden');
-  });
   if (!$('html').hasClass('old-ie')) {
+    $('.js-open-modal').click(function(e) {
+      e.preventDefault();
+      $modal.addClass('modal--open');
+      $postIt.addClass('post-it__content--hidden');
+    });
+
+    $('.js-close-modal').click(function(e) {
+      e.preventDefault();
+      $modal.removeClass('modal--open');
+      $modal.removeClass('modal--success');
+      $postIt.removeClass('post-it__content--hidden');
+    });
   }
 
-  $('.js-form').submit(function(e) {
+  $form.submit(function(e) {
     e.preventDefault();
 
     var formMail = $(this).find('input'),
@@ -38,31 +45,31 @@ $(function() {
       message: formMsg.val()
     };
 
-    var posting = $.post( '../../mail.php', formData );
+    var posting = $.post( 'http://mf.vc/new/mail.php', formData );
 
-    $('.js-form-submit').addClass('button--pulse-on');
-    $('.js-form-submit').attr('disabled', 'disabled');
-    $('.js-form-error').text('');
+    $formSubmit.addClass('button--pulse-on');
+    $formSubmit.attr('disabled', 'disabled');
+    $formError.text('');
 
     posting.done(function( data ) {
-      $('.js-form-submit').removeClass('button--pulse-on');
-      $('.js-form-submit').attr('disabled', false);
+      $formSubmit.removeClass('button--pulse-on');
+      $formSubmit.attr('disabled', false);
       if (data == 'Mail sent successfully') {
-        $('.js-modal').removeClass('modal--open');
-        $('.js-modal').addClass('modal--success');
+        $modal.removeClass('modal--open');
+        $modal.addClass('modal--success');
         setTimeout(function() {
-          $('.js-form-error').text('');
+          $formError.text('');
           formMail.val('');
           formMsg.val('');
         },300);
 
       } else {
-        $('.js-form-error').text(data);
-        $('.js-form').removeClass('form--error');
-        $('.js-modal').removeClass('modal--error');
+        $formError.text(data);
+        $form.removeClass('form--error');
+        $modal.removeClass('modal--error');
         setTimeout(function() {
-          $('.js-form').addClass('form--error');
-          $('.js-modal').addClass('modal--error');
+          $form.addClass('form--error');
+          $modal.addClass('modal--error');
         }, 10);
       }
     });
