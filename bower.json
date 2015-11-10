@@ -18,5 +18,6 @@
     "basicss": "~0.2.0",
     "jquery": "1.11",
     "modernizr": "~2.8.1"
+    "fastclick": "~1.0.6"
   }
 }

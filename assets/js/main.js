@@ -16,6 +16,7 @@ $(function() {
     $('.js-modal').addClass('modal--open');
     $('.js-post-it').addClass('post-it__content--hidden');
   });
+  FastClick.attach(document.body);
 
   $('.js-close-modal').click(function(e) {
     e.preventDefault();
