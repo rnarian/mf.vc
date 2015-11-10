@@ -24,6 +24,8 @@ $(function() {
     $('.js-modal').removeClass('modal--success');
     $('.js-post-it').removeClass('post-it__content--hidden');
   });
+  if (!$('html').hasClass('old-ie')) {
+  }
 
   $('.js-form').submit(function(e) {
     e.preventDefault();
