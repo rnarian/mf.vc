@@ -40,3 +40,12 @@
   50% { content: "🖖"; }
   75% { content: "🖐"; }
 }
+
+@keyframes waveLeft {
+  from {
+    background-position: left center;
+  }
+  to {
+    background-position: -16px center;
+  }
+}

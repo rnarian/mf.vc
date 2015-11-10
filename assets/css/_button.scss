@@ -16,11 +16,12 @@
     left: 0;
     right: 0;
     bottom: -$baseUnit/3;
-    height: 14px; // height of wave.svg
+    height: 12px; // height of wave.svg
   }
   &:before {
     background-repeat: repeat-x !important; // to trump grunticons background-repeat
     background-position: left center;
+    transition: .3s;
   }
   &:after {
     background-image: linear-gradient(to right, rgba($colorPostIt, 1), rgba($colorPostIt, 0)), linear-gradient(to left, rgba($colorPostIt, 1), rgba($colorPostIt, 0));
@@ -31,6 +32,9 @@
   &:hover {
     text-decoration: none;
     color: $colorSecondary;
+    &:before {
+      animation: waveLeft 200ms linear infinite;
+    }
   }
 }
 
@@ -68,7 +72,7 @@
     left: 0;
     right: 0;
     bottom: -$baseUnit/3;
-    height: 14px; // height of wave.svg
+    height: 12px; // height of wave.svg
     opacity: 0;
     transition: .3s;
   }
@@ -86,10 +90,14 @@
 
 .button--pulse-on {
   color: #fff;
-  //animation: pulse 400ms linear infinite;
+
   &:before,
   &:after {
     opacity: 1;
+  }
+
+  &:before {
+    animation: waveLeft 200ms linear infinite;
   }
 }
 
