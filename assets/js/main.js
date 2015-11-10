@@ -22,12 +22,14 @@ $(function() {
   if (!$('html').hasClass('old-ie')) {
     $('.js-open-modal').click(function(e) {
       e.preventDefault();
+      $body.addClass('no-scroll');
       $modal.addClass('modal--open');
       $postIt.addClass('post-it__content--hidden');
     });
 
     $('.js-close-modal').click(function(e) {
       e.preventDefault();
+      $body.removeClass('no-scroll');
       $modal.removeClass('modal--open');
       $modal.removeClass('modal--success');
       $postIt.removeClass('post-it__content--hidden');

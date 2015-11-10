@@ -3,10 +3,13 @@ body {
   height: 100%;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 body {
   opacity: 1;
   transition: opacity .3s ease-out;
-  overflow: hidden;
 }
 
 .no-show {
