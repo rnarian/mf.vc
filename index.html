@@ -75,24 +75,22 @@
           <div class="constrain constrain--medium">
             <div class="form js-form">
               <form action="mail.php" method="post">
-                <label>
+                <label class="form__label">
                   Mail
                   <span class="fade fade--vertical">
-                    <input name="mail" type="email" focus/>
+                    <input class="form__text-input" name="mail" type="email" focus/>
                   </span>
                 </label>
-                <label>
+                <label class="form__label">
                   Message
                   <span class="fade fade--horizontal">
-                    <textarea name="message"></textarea>
+                    <textarea  class="form__comment" name="message"></textarea>
                   </span>
                 </label>
-                <div class="grid">
-                  <div class="grid__item width--3of4">
-                    <span class="form__error js-form-error"></span>
-                  </div><!--
-               --><div class="grid__item width--1of4 text--right">
-                    <button class="button button--pulse button--large js-form-submit" data-original="Send">Send.</button>
+                <div class="form__process">
+                  <span class="form__error js-form-error"></span>
+                  <div class="form__submit">
+                    <button class="button button--pulse button--large js-form-submit">Send</button>
                   </div>
                 </div>
               </form>
