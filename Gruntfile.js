@@ -15,7 +15,7 @@ module.exports = function(grunt) {
         sass: {
             dev: {
                 options: {
-                    outputStyle: 'expanded',
+                    outputStyle: 'compressed',
                     loadPath: '.'
                 },
                 files: {
@@ -179,7 +179,7 @@ module.exports = function(grunt) {
             },
             scripts: {
                 files: ['Gruntfile.js', '<%= dirs.js %>/*.js'],
-                tasks: ['jshint', 'concat'],
+                tasks: ['jshint', 'concat', 'uglify'],
                 options: {
                     spawn: false
                 }
