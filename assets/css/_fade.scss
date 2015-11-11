@@ -1,0 +1,58 @@
+
+.fade {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-top: ceil($baseUnit/4);
+  @include media($basePageBreak) {
+    margin-top: 0;
+  }
+  &:before,
+  &:after {
+    position: absolute;
+    content: '';
+    z-index: 1;
+  }
+}
+
+.fade--vertical {
+  &:before,
+  &:after {
+    top: 0;
+    bottom: 0;
+    width: ceil($baseUnit*.75);
+    @include media($basePageBreak) {
+      width: $baseUnit*1.25;
+    }
+  }
+  &:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255,1) 70%);
+  }
+
+  &:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1) 70%);
+  }
+}
+
+.fade--horizontal {
+  &:before,
+  &:after {
+    left: 0;
+    right: 0;
+    height: ceil($baseUnit*.75);
+    @include media($basePageBreak) {
+      height: $baseUnit*1.25;
+    }
+  }
+  &:before {
+    top: 0;
+    background: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1) 80%);
+  }
+
+  &:after {
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1) 80%);
+  }
+}
