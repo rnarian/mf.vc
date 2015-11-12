@@ -15,8 +15,6 @@ $(function() {
       $formSubmit = $('.js-form-submit'),
       $formError = $('.js-form-error');
 
-  $body.removeClass('no-show');
-
   FastClick.attach(document.body);
 
   if (!$('html').hasClass('old-ie')) {
