@@ -142,6 +142,7 @@ $easePopOut: cubic-bezier(.52,-0.22,.43,.5);
   .modal--open & {
     visibility: visible;
     opacity: 1;
+    backface-visibility: hidden;
     transform: translateY(0);
     transition: .5s ease-out .1s;
   }
