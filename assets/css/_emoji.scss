@@ -7,11 +7,13 @@
     padding: $baseUnit*2 $baseUnit*2.5;
     transform: scale(5);
   }
-}
-
-.emoji {
   &:before {
     content: '🤘';
+  }
+}
+
+.modal--success {
+  .emoji:before {
     animation: emojiflip 1000ms linear infinite both;
   }
 }
