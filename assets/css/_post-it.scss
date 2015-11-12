@@ -5,7 +5,7 @@
     background: #fff;
     width: 100%;
     height: 100%;
-    padding: $baseUnit;
+    padding: 0 $baseUnit;
   }
 
   &__content {
@@ -13,7 +13,7 @@
     padding: $baseUnit $baseUnit*1.5;
     width: 100%;
     height: 100%;
-    @include font-size(36px, false);
+    @include font-size(34px, false);
     line-height: 1.25;
     position: relative;
     color: $colorDarkText;
