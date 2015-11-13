@@ -32,12 +32,6 @@ form input. See modal.scss > .modal--error */
   100% { background: rgba(#fff,0); visibility: hidden}
 }
 
-@keyframes pulse {
-  0% { color: #fff; }
-  80% { color: lighten($colorMain, 40%); }
-  100% { color: #fff;  }
-}
-
 /* Emojiflip animation is used to thank the user after
    successful form submission.
    See button.scss > .button--pulse */
