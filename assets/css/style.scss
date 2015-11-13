@@ -47,10 +47,7 @@ $basePageBreakSmall: 360px min-height 400px;
  * e.g. @import 'nav';
  */
 
-.constrain {
-  padding: 0 $baseUnit;
-}
-
+@import 'constrain';
 @import 'base';
 @import 'animations';
 @import 'center';
