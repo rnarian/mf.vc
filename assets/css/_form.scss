@@ -1,7 +1,4 @@
 .form {
-  &--error {
-    animation: shake 1000ms linear 1 both;
-  }
 
   &__label,
   &__text-input,
@@ -84,4 +81,8 @@
     top: 50%;
     transform: translateY(-50%);
   }
+}
+
+.form-error {
+  animation: shake 1000ms linear 1 both;
 }
