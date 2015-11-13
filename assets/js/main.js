@@ -51,9 +51,9 @@ $(function() {
     $formSubmit.attr('disabled', 'disabled');
     $formError.text('');
 
-    $form.removeClass('form--error');
-    $formError.removeClass('form--error');
-    $formSubmit.removeClass('form--error');
+    $form.removeClass('form-error');
+    $formError.removeClass('form-error');
+    $formSubmit.removeClass('form-error');
     $modal.removeClass('modal--error');
 
     posting.done(function( data ) {
@@ -69,14 +69,14 @@ $(function() {
         },300);
 
       } else {
-        $form.addClass('form--error');
+        $form.addClass('form-error');
         $modal.addClass('modal--error');
         setTimeout(function() {
           $formError.text(data);
-          $formError.addClass('form--error');
+          $formError.addClass('form-error');
         }, 25);
         setTimeout(function() {
-          $formSubmit.addClass('form--error');
+          $formSubmit.addClass('form-error');
         }, 50);
 
       }
