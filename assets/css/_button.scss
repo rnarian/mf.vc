@@ -29,7 +29,8 @@
     background-position: left center, right center;
     background-size: 10px 100%, 10px 100%;
   }
-  &:hover {
+  &:hover,
+  &:focus {
     text-decoration: none;
     color: $colorSecondary;
     &:before {
@@ -60,8 +61,9 @@
   padding-right: 0 !important; // to trump button objects padding
   color: rgba(#fff, .5);
   transition: .3s;
-  &:hover, &:active, &:focus { outline: 0;}
-  &:hover { color: #fff; }
+  //&:hover, &:active, &:focus { outline: 0;}
+  &:hover, &:focus { color: #fff; }
+  &:focus { outline: 1px dotted #fff; }
   &:after,
   &:before {
     position: absolute;
@@ -136,6 +138,7 @@
   &:after {
     transform: rotate(45deg);
   }
+  &:focus { outline: 1px dotted #fff; }
   &:hover:before {
     transform: rotate(45deg);
     transition: transform .3s .1s ease-out;
