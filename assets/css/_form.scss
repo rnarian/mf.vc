@@ -6,6 +6,7 @@
     display: block;
   }
 
+  /* Text input/textarea styles. */
   &__label {
     position: relative;
     color: rgba(255,255,255,.3);
@@ -28,6 +29,7 @@
     }
   }
 
+  /* Text input/textarea styles. */
   &__text-input,
   &__comment {
     border: 0;
@@ -71,10 +73,12 @@
     resize: none;
   }
 
+  /* Wrapper for form__error and form__submit. */
   &__process {
     position: relative;
   }
 
+  /* Form submit is moved to the right. */
   &__submit {
     position: absolute;
     right: 0;
@@ -83,6 +87,8 @@
   }
 }
 
+/* Shake animation is used to shake different elements on
+   invalid form input and is applied in via js. */
 .form-error {
   animation: shake 1000ms linear 1 both;
 }

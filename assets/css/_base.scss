@@ -3,10 +3,15 @@ body {
   height: 100%;
 }
 
+/* The no-scroll class is used by main.js to prevent body scroll when modal
+   is opened. */
 .no-scroll {
   overflow: hidden;
 }
 
+/* Prevent 300ms click delay on mobile microsoft devices. Mobile chrome
+   is handled by meta user-scalable=no and for ios devices fastclick js
+   is implemented. */
 a, button, input {
   touch-action: manipulation;
   -ms-touch-action: manipulation

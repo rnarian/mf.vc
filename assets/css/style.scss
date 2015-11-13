@@ -7,11 +7,6 @@
 
 /**
  * basicss overrides
- *
- * any defaults in basicss/basicss/_settings.scss
- * may be overridden...
- *
- * e.g. $prototyping: true;
  */
 
 $spacingHelper: false;
@@ -20,7 +15,9 @@ $typoHelper: false;
 
 $constrainObject: true;
 
-/* colors */
+/**
+ * colors
+ */
 
 $colorMain: #6B55AE;
 $colorSecondary: #DE5483;
@@ -38,6 +35,9 @@ $fontPrimary: "futura-pt", sans-serif;
  */
 
 @import 'bower_components/basicss/basicss';
+
+/* custom breakpoints */
+
 $basePageBreak: $breakTablet min-height 600px;
 $basePageBreakSmall: 360px min-height 400px;
 

@@ -1,3 +1,4 @@
+/* Button with wavy underline. Underline animates on hover. */
 .button--wave {
   position: relative;
   display: inline-block;
@@ -37,6 +38,7 @@
   }
 }
 
+/* Modifier .button--large */
 .button--large {
   @include font-size(36px,false);
   @include media($basePageBreak) {
@@ -45,6 +47,9 @@
   line-height: 1.25;
 }
 
+/* Similar to .button--wave only that the wavy underline
+   only animates when class .button--pulse-on is added
+   additionally. */
 .button--pulse {
   position: relative;
   display: inline-block;
@@ -80,6 +85,8 @@
   }
 }
 
+/* .button--pulse-on is added via js while form data
+    is processed by mail.php. */
 .button--pulse-on {
   color: #fff;
 
@@ -93,6 +100,8 @@
   }
 }
 
+/* Close button for modal window. Uses slight animation
+   on hover. */
 .button--close {
   position: relative;
   width: 30px;

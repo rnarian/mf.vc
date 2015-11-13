@@ -1,5 +1,15 @@
 $easePopOut: cubic-bezier(.52,-0.22,.43,.5);
 
+/**
+ * Modal class with 3 states:
+ *
+ * .modal          - Modal is not visible
+ * .modal--open    - Modal is open, showing the
+ *                   contents of .modal__content
+ * .modal--success - Modal is open, showing the
+ *                   contents of .modal__success
+ */
+
 .modal {
   position: fixed;
   top: 0;
@@ -10,7 +20,7 @@ $easePopOut: cubic-bezier(.52,-0.22,.43,.5);
   transform: translateY(110%);
   transition: .3s ease-out .4s;
 
-  // wave border
+  /* wave border */
   &:before {
     position: absolute;
     content: '';
@@ -22,7 +32,9 @@ $easePopOut: cubic-bezier(.52,-0.22,.43,.5);
     background-repeat: repeat-x !important;
   }
 
-  // modal error, see modal--error:after and animations.scss
+  /* Modal error state. Adds flash to the modal
+    when form submission failed.
+    See modal--error:after and animations.scss */
   &:after {
     position: fixed;
     content: '';
@@ -57,7 +69,8 @@ $easePopOut: cubic-bezier(.52,-0.22,.43,.5);
   right: 0;
   padding: $baseUnit;
 
-  // modal__header background
+  /* modal__header background on :before element
+     for animation performance purposes. */
   &:before {
     position: absolute;
     z-index: -1;

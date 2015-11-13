@@ -1,3 +1,6 @@
+/* Center class is used to vertically center elements
+   within their parent container. Height must be
+   specified on parent container. */
 .center {
   @include media($basePageBreakSmall) {
     display: table;
@@ -10,6 +13,8 @@
   }
 }
 
+/* Modifier to force centering despite missing min-height
+   specified in $basePageBreakSmall */
 .center--force {
   display: table;
   width: 100%;

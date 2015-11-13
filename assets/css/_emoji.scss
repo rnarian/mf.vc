@@ -1,3 +1,5 @@
+/* Big emoji to thank the user after successful
+   form submission. */
 .emoji {
   font-family: "Helvetica Neue", sans-serif;
   padding: $baseUnit*1 $baseUnit*1.5;
@@ -13,6 +15,9 @@
   }
 }
 
+/* Animation is only added when modal--success layer
+   is visible. Otherwise the animation would run even
+   if it isn't needed. */
 .modal--success {
   .emoji:before {
     animation: emojiflip 1000ms linear infinite both;

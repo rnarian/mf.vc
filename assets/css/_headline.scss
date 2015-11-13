@@ -1,11 +1,10 @@
-.headline {
-
-}
-
+/* Headline modifier headline--darkbg to display
+   headline on dark backgrounds. */
 .headline--darkbg {
   color: #fff;
 }
 
+/* Headline font-size adjustments. */
 .heading-1 {
   @include font-size(32px,false);
   @include media($basePageBreak) {

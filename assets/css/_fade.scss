@@ -1,4 +1,6 @@
-
+/* The fade class is used to wrap inputs
+   (fade--horizontal) and textareas (fade--vertical)
+   in order to subtly fade away the overflowing text. */
 .fade {
   position: relative;
   display: block;
@@ -15,6 +17,7 @@
   }
 }
 
+/* The fade--vertical modifier is used for textareas. */
 .fade--vertical {
   &:before,
   &:after {
@@ -36,6 +39,7 @@
   }
 }
 
+/* The fade--vertical modifier is used for text-inputs. */
 .fade--horizontal {
   &:before,
   &:after {
