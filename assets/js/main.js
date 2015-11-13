@@ -51,6 +51,11 @@ $(function() {
     $formSubmit.attr('disabled', 'disabled');
     $formError.text('');
 
+    $form.removeClass('form--error');
+    $formError.removeClass('form--error');
+    $formSubmit.removeClass('form--error');
+    $modal.removeClass('modal--error');
+
     posting.done(function( data ) {
       $formSubmit.removeClass('button--pulse-on');
       $formSubmit.attr('disabled', false);
@@ -64,13 +69,16 @@ $(function() {
         },300);
 
       } else {
-        $formError.text(data);
-        $form.removeClass('form--error');
-        $modal.removeClass('modal--error');
+        $form.addClass('form--error');
+        $modal.addClass('modal--error');
         setTimeout(function() {
-          $form.addClass('form--error');
-          $modal.addClass('modal--error');
-        }, 10);
+          $formError.text(data);
+          $formError.addClass('form--error');
+        }, 25);
+        setTimeout(function() {
+          $formSubmit.addClass('form--error');
+        }, 50);
+
       }
     });
   });
