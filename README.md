@@ -1,1 +1,3 @@
-# mf.vc.dev
+# mf.vc
+
+Personal vCard type website.
