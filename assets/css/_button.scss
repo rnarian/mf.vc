@@ -139,11 +139,13 @@
     transform: rotate(45deg);
   }
   &:focus { outline: 1px dotted #fff; }
-  &:hover:before {
+  &:hover:before,
+  &:focus:before {
     transform: rotate(45deg);
     transition: transform .3s .1s ease-out;
   }
-  &:hover:after {
+  &:hover:after,
+  &:focus:after {
     transform: rotate(135deg);
     transition: transform .3s ease-out;
   }
