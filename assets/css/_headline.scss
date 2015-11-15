@@ -4,6 +4,12 @@
   color: #fff;
 }
 
+.headline--flush {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
 /* Headline font-size adjustments. */
 .heading-1 {
   @include font-size(32px,false);
