@@ -70,7 +70,7 @@
 </head>
 <body>
 
-  <section class="post-it">
+  <div class="post-it">
     <article class="post-it__content js-post-it">
       <h1 class="headline headline--flush">
         Marian Friedmann. <br>Web Designer and Front-End Developer based in Würzburg, Germany.
@@ -79,7 +79,7 @@
         <a class="button button--wave js-open-modal" href="mailto:hi@marianfriedmann.de">Get in touch.</a>
       </p>
     </article>
-  </section>
+  </div>
 
   <div class="modal js-modal">
     <header class="modal__header">
@@ -88,20 +88,18 @@
         <button class="button button--close js-close-modal"></button>
       </div>
     </header>
-    <section class="modal__scrollable">
+    <div class="modal__scrollable">
       <div class="center center--modal">
-        <article class="center__inner">
+        <div class="center__inner">
           <div class="constrain constrain--medium">
             <div class="form js-form">
               <form action="mail.php" method="post">
-                <label class="form__label">
-                  Mail
+                <label class="form__label">Mail
                   <span class="fade fade--vertical">
-                    <input class="form__text-input" name="mail" type="email" focus/>
+                    <input class="form__text-input" name="mail" type="email"/>
                   </span>
                 </label>
-                <label class="form__label">
-                  Message
+                <label class="form__label">Message
                   <span class="fade fade--horizontal">
                     <textarea  class="form__comment" name="message"></textarea>
                   </span>
@@ -115,19 +113,19 @@
               </form>
             </div>
           </div>
-        </article>
+        </div>
       </div>
-    </section>
-    <section class="modal__success">
+    </div>
+    <div class="modal__success">
       <div class="center center--force">
         <article class="center__inner">
           <div class="constrain constrain--max">
             <span class="emoji"></span>
-            <h6 class="headline headline--darkbg heading-1"> Mail successfully sent!</h6>
+            <h6 class="headline headline--darkbg heading-1">Mail successfully sent!</h6>
           </div>
         </article>
       </div>
-    </section>
+    </div>
   </div>
 
   <script src="assets/js/build.js"></script>
